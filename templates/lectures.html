@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>CSCB63 - Design and Analysis of Data Structures</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Ubuntu"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/courseTeam">Team</a></li>
+        <li><a href="/syllabus">Syllabus</a></li>
+        <li><a class="current-tab" href="/lectures">Lectures</a></li>
+        <li><a href="/labs">Labs</a></li>
+        <li><a href="/assignments">Assignments</a></li>
+        <li>
+          <a
+            href="https://piazza.com/class/kk052lckppx73x?cid=217"
+            target="_blank"
+            >Piazza</a
+          >
+        </li>
+        <li>
+          <a href="https://markus.utsc.utoronto.ca/cscb20w21/" target="_blank"
+            >Markus</a
+          >
+        </li>
+
+        {% if name == "students" %}
+        <li><a href="/feedback">Feedback</a></li>
+        <li><a href="/mygrades"> My Grades</a></li>
+        {% elif name == "instructors" %}
+        <li><a href="/myFeedback">My Feedback</a></li>
+        <li><a href="/gradesall">Grades</a></li>
+        {% endif %}
+
+        <form action="/logout">
+          <button>Logout</button>
+        </form>
+      </ul>
+    </div>
+
+    <div class="body-container">
+      <div class="text-block">
+        <div class="grid-containerLectures">
+          <div class="grid-header">Week</div>
+          <div class="grid-header">Topic</div>
+          <div class="grid-header">Wed Pre-Lec<br />Reading/Exercise</div>
+          <div class="grid-header">Thurs Pre-Lec Reading/Exercise</div>
+          <div class="grid-header">Wed Slides/Video</div>
+          <div class="grid-header">Thurs Slides/Video</div>
+
+          <div class="grid-item">1</div>
+          <div class="grid-item">Intro, Worst Case Complexity</div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">CLRS 3.1 (not including little "oh")</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 1.1</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 1.2</a
+            >
+          </div>
+
+          <div class="grid-item">2</div>
+          <div class="grid-item">Balanced Trees (AVL)</div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">
+            Refresh your understanding of binary search trees
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 2.1</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 2.2</a
+            >
+          </div>
+
+          <div class="grid-item">3</div>
+          <div class="grid-item">
+            AVL Trees height, and Augment. Interval Trees
+          </div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 3.1</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 3.2</a
+            >
+          </div>
+
+          <div class="grid-item">4</div>
+          <div class="grid-item">
+            Finish Interval Trees, Heaps and Graph Search Algorithms
+          </div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">
+            If you have not had your tutorial, read the graph handout on the
+            tutorials page.
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 4.1</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 4.2</a
+            >
+          </div>
+
+          <div class="grid-item">5</div>
+          <div class="grid-item">Graph Searches and Minimum Spanning Trees</div>
+          <div class="grid-item">Term Test Wed</div>
+          <div class="grid-item">
+            22.5, Review DFS - make sure you understand it
+          </div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 5.2</a
+            >
+          </div>
+
+          <div class="grid-item">6</div>
+          <div class="grid-item">
+            Proof of Prims, Dijkstra's Algorithm, Strongly Connected Components
+          </div>
+          <div class="grid-item">Ch 24.3, Practice Prims algorithm</div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 6.1</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 6.2</a
+            >
+          </div>
+
+          <div class="grid-item">7</div>
+          <div class="grid-item">Amortized Analysis</div>
+          <div class="grid-item">Ch. 17.4, Ch. 21</div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 7.1</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 7.2</a
+            >
+          </div>
+
+          <div class="grid-item">8</div>
+          <div class="grid-item">Disjoint Sets, Fibonacci Heaps</div>
+          <div class="grid-item">Ch. 20</div>
+          <div class="grid-item">Review Heaps</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 8.1</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 8.2</a
+            >
+          </div>
+
+          <div class="grid-item">9</div>
+          <div class="grid-item">Fibonacci Heaps</div>
+          <div class="grid-item">Term Test Wed</div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 9.2</a
+            >
+          </div>
+
+          <div class="grid-item">10</div>
+          <div class="grid-item">Mergeable Heaps</div>
+          <div class="grid-item">Ch. 14</div>
+          <div class="grid-item">Ch. 15</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 10.1</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 10.2</a
+            >
+          </div>
+
+          <div class="grid-item">11</div>
+          <div class="grid-item">Hashing</div>
+          <div class="grid-item">CLRS 2.3</div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 11.1</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 11.2</a
+            >
+          </div>
+
+          <div class="grid-item">12</div>
+          <div class="grid-item">Application of Heaps, Hashing in Graphs</div>
+          <div class="grid-item">Term Test Wed</div>
+          <div class="grid-item">Relax</div>
+          <div class="grid-item">None</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >lecture 12.2</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <a
+        href="https://web.cs.toronto.edu/contact-us/faculty-directory"
+        target="_blank"
+        >Faculty of Computer Science</a
+      >
+      Made By Omar & Sammak & Shafin
+    </div>
+  </body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>CSCB63 - Design and Analysis of Data Structures</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Ubuntu"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/courseTeam">Team</a></li>
+        <li><a href="/syllabus">Syllabus</a></li>
+        <li><a href="/lectures">Lectures</a></li>
+        <li><a class="current-tab" href="/labs">Labs</a></li>
+        <li><a href="/assignments">Assignments</a></li>
+        <li>
+          <a
+            href="https://piazza.com/class/kk052lckppx73x?cid=217"
+            target="_blank"
+            >Piazza</a
+          >
+        </li>
+        <li>
+          <a href="https://markus.utsc.utoronto.ca/cscb20w21/" target="_blank"
+            >Markus</a
+          >
+        </li>
+
+        {% if name == "students" %}
+        <li><a href="/feedback">Feedback</a></li>
+        <li><a href="/mygrades"> My Grades</a></li>
+        {% elif name == "instructors" %}
+        <li><a href="/myFeedback">My Feedback</a></li>
+        <li><a href="/gradesall">Grades</a></li>
+        {% endif %}
+
+        <form action="/logout">
+          <button>Logout</button>
+        </form>
+      </ul>
+    </div>
+
+    <div class="body-container">
+      <div class="text-block">
+        <h2>Tutorial Content</h2>
+        <hr />
+
+        <div class="grid-containerLabs">
+          <div class="grid-header">Week</div>
+          <div class="grid-header">Topic</div>
+          <div class="grid-header">Handout</div>
+          <div class="grid-header">Solutions</div>
+
+          <div class="grid-item">1</div>
+          <div class="grid-item">No Tutorial</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">2</div>
+          <div class="grid-item">Worst Case Complexity</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">3</div>
+          <div class="grid-item">AVL Trees Insert/Delete</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">4</div>
+          <div class="grid-item">Practice Term test format</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">5</div>
+          <div class="grid-item">Graph Search Algorithms</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">6</div>
+          <div class="grid-item">MSTs and Prims Algorithm</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">7</div>
+          <div class="grid-item">Dijkstra</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">8</div>
+          <div class="grid-item">Ammortized Complexity</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">9</div>
+          <div class="grid-item">Disjoint Sets</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">10</div>
+          <div class="grid-item">Fibonacci Heaps</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">11</div>
+          <div class="grid-item">Mergeable Heaps</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+
+          <div class="grid-item">12</div>
+          <div class="grid-item">Hashing</div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >handout</a
+            >
+          </div>
+          <div class="grid-item">
+            <a
+              href="{{ url_for('static',filename='content/sample_pdf.pdf') }}"
+              target="_blank"
+              >solutions</a
+            >
+          </div>
+        </div>
+
+        <h2>Tutorial Times</h2>
+        <hr />
+
+        <div class="grid-containerLabs">
+          <div class="grid-header">Tutorial Number</div>
+          <div class="grid-header">Time</div>
+          <div class="grid-header">Instructor</div>
+          <div class="grid-header">Tut Link</div>
+
+          <div class="grid-item">Tut 0001</div>
+          <div class="grid-item">Tuesday 7:00PM - 8:00PM</div>
+          <div class="grid-item">Danhua Cai</div>
+          <div class="grid-item">
+            <a href="https://zoom.us/" target="_blank">Link</a>
+          </div>
+
+          <div class="grid-item">Tut 0002</div>
+          <div class="grid-item">Wednesday 7:00PM - 8:00PM</div>
+          <div class="grid-item">Aamir Haroon</div>
+          <div class="grid-item">
+            <a href="https://zoom.us/" target="_blank">Link</a>
+          </div>
+
+          <div class="grid-item">Tut 0003</div>
+          <div class="grid-item">Thursday 5:00PM - 6:00PM</div>
+          <div class="grid-item">Aamir Haroon</div>
+          <div class="grid-item">
+            <a href="https://zoom.us/" target="_blank">Link</a>
+          </div>
+
+          <div class="grid-item">Tut 0004</div>
+          <div class="grid-item">Friday 12:00PM - 1:00PM</div>
+          <div class="grid-item">Andrew Leung</div>
+          <div class="grid-item">
+            <a href="https://zoom.us/" target="_blank">Link</a>
+          </div>
+
+          <div class="grid-item">Tut 0005</div>
+          <div class="grid-item">Thursday 6:00PM - 7:00PM</div>
+          <div class="grid-item">Jeff Zhao</div>
+          <div class="grid-item">
+            <a href="https://zoom.us/" target="_blank">Link</a>
+          </div>
+
+          <div class="grid-item">Tut 0007</div>
+          <div class="grid-item">Wednesday 10:00AM - 11:00AM</div>
+          <div class="grid-item">Yufei Cui</div>
+          <div class="grid-item">
+            <a href="https://zoom.us/" target="_blank">Link</a>
+          </div>
+
+          <div class="grid-item">Tut 0008</div>
+          <div class="grid-item">Friday 9:00AM - 10:00AM</div>
+          <div class="grid-item">Anna Bretscher</div>
+          <div class="grid-item">
+            <a href="https://zoom.us/" target="_blank">Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <a
+        href="https://web.cs.toronto.edu/contact-us/faculty-directory"
+        target="_blank"
+        >Faculty of Computer Science</a
+      >
+      Made By Omar & Sammak & Shafin
+    </div>
+  </body>
+</html>

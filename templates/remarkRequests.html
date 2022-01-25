@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>CSCB63 - Design and Analysis of Data Structures</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Ubuntu"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/courseTeam">Team</a></li>
+        <li><a href="/syllabus">Syllabus</a></li>
+        <li><a href="/lectures">Lectures</a></li>
+        <li><a href="/labs">Labs</a></li>
+        <li><a href="/assignments">Assignments</a></li>
+        <li>
+          <a
+            href="https://piazza.com/class/kk052lckppx73x?cid=217"
+            target="_blank"
+            >Piazza</a
+          >
+        </li>
+        <li>
+          <a href="https://markus.utsc.utoronto.ca/cscb20w21/" target="_blank"
+            >Markus</a
+          >
+        </li>
+
+        {% if name == "students" %}
+        <li><a href="/feedback">Feedback</a></li>
+        <li><a href="/mygrades"> My Grades</a></li>
+        {% elif name == "instructors" %}
+        <li><a href="/myFeedback">My Feedback</a></li>
+        <li><a class="current-tab" href="/gradesall">Grades</a></li>
+        {% endif %}
+
+        <form action="/logout">
+          <button>Logout</button>
+        </form>
+      </ul>
+    </div>
+
+    <div class="body-container">
+      <div class="text-block">
+        <h2>Remark Requests</h2>
+
+        <div class="grid-containerGradesInstructor">
+          <div class="grid-header">StudentID</div>
+          <div class="grid-header">A1</div>
+          <div class="grid-header">Q1</div>
+          <div class="grid-header">A2</div>
+          <div class="grid-header">Q2</div>
+          <div class="grid-header">A3</div>
+          <div class="grid-header">Q3</div>
+
+          {% for remark in requests %}
+          <div class="grid-item">{{ remark[0] }}</div>
+          <div class="grid-item">{{ remark[1] }}</div>
+          <div class="grid-item">{{ remark[2] }}</div>
+          <div class="grid-item">{{ remark[3] }}</div>
+          <div class="grid-item">{{ remark[4] }}</div>
+          <div class="grid-item">{{ remark[5] }}</div>
+          <div class="grid-item">{{ remark[6] }}</div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <a
+        href="https://web.cs.toronto.edu/contact-us/faculty-directory"
+        target="_blank"
+        >Faculty of Computer Science</a
+      >
+      Made By Omar & Sammak & Shafin
+    </div>
+  </body>
+</html>

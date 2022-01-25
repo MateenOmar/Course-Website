@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>CSCB63 - Design and Analysis of Data Structures</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Ubuntu"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/courseTeam">Team</a></li>
+        <li><a class="current-tab" href="/syllabus">Syllabus</a></li>
+        <li><a href="/lectures">Lectures</a></li>
+        <li><a href="/labs">Labs</a></li>
+        <li><a href="/assignments">Assignments</a></li>
+        <li>
+          <a
+            href="https://piazza.com/class/kk052lckppx73x?cid=217"
+            target="_blank"
+            >Piazza</a
+          >
+        </li>
+        <li>
+          <a href="https://markus.utsc.utoronto.ca/cscb20w21/" target="_blank"
+            >Markus</a
+          >
+        </li>
+
+        {% if name == "students" %}
+        <li><a href="/feedback">Feedback</a></li>
+        <li><a href="/mygrades"> My Grades</a></li>
+        {% elif name == "instructors" %}
+        <li><a href="/myFeedback">My Feedback</a></li>
+        <li><a href="/gradesall">Grades</a></li>
+        {% endif %}
+
+        <form action="/logout">
+          <button>Logout</button>
+        </form>
+      </ul>
+    </div>
+
+    <div class="body-container">
+      <div class="text-block">
+        
+        <h1>Syllabus</h1>
+
+        <P>
+          Exclusion CSC263H, CSC265H, (CSCC78H)<br>
+          Prerequisite CSCB36H or (CSCB38H) & [CGPA 2.75 or enrolment in a CSC subject POSt]
+        </P>
+        
+        <h3>Topics</h3>
+        <hr />
+
+        <p>
+          <ul>
+            <li>• Worst Case Complexity</li>
+            <li>• Balanced Search Trees</li>
+            <li>• Graphs and Graph Traversals</li>
+            <li>• Priority Queues and Heaps</li>
+            <li>• Disjoint Sets</li>
+            <li>• Amortized Complexity</li>
+            <li>• Average Case Analysis</li>
+            <li>• Hashing</li>
+          </ul>
+        </p>
+
+        <h3>Term Work</h3>
+        <hr />
+
+        <p>
+          <h5>Assignments</h5>
+          <ul>
+            <li>• 4 each worth 5% for a total of 20%</li>
+            <li>• Basic understanding questions</li>
+            <li>• More challenging questions</li>
+            <li>• Only some of the questions will be graded</li>
+            <li>• Applied question (programming in C)</li>
+          </ul>
+        </p>
+
+        <p>
+          <h5>Term Tests (3)</h5>
+          <ul>
+            <li>• 60min each held in Wednesday lecture</li>
+            <li>• Worth 15%, 15%, 15% </li>
+            <li>• Test 1 covers A1, Test 2 covers A2, Test 3 covers A3</li>
+          </ul>
+        </p>
+
+        <p>
+          <h5>Final Exam</h5>
+          <ul>
+            <li>• worth 35%</li>
+          </ul>
+        </p>
+
+        <h3>Textbook Options</h3>
+        <hr />
+        
+        <p>
+          <b>Algorithm Design: Foundations, Analysis, and Internet Examples.</b><br>
+          Michael Goodrich and Roberto Tamassia, John Wiley & Sons(2002),<br>
+          ISBN:0471383651.<br><br>
+
+
+          <b>Introduction to Algorithms (2nd edition).</b><br>
+          Cormen, Leiserson, Rivest, Stein McGraw-Hill (2001),<br>
+          ISBN:0070131511.<br>
+          Free online access for U of T students: <a href = http://main.library.utoronto.ca/eir/resources.cfm target="_blank">http://main.library.utoronto.ca/eir/resources.cfm</a>
+        </p>
+
+        <h3>Course Design</h3>
+        <hr />
+
+        <p>
+          <ul>
+            <li>• Each week there may be pre-lecture preparation and pre-lecture exercises.</li>
+            <li>• In lectures we will have a mixture of slides and practice.</li>
+            <li>• Completing the pre-lecture work will maximize your learning in this course.</li>
+            <li>• It will enable you to make the best use of lecture time.</li>
+          </ul>
+        </p>
+
+        <h3>Resources</h3>
+        <hr />
+
+        <p>
+          <ul>
+            <li>• Piazza: you will get an invite - all updates posted here.</li>
+            <li>• Website: this website</li>
+            <li>• Calendar: downloadable calendar has all dates</li>
+            <li>• U of T email: I will send you important updates to your email.</li>
+          </ul>
+        </p>
+
+      </div>
+    </div>
+
+    <div id="footer">
+      <a
+        href="https://web.cs.toronto.edu/contact-us/faculty-directory"
+        target="_blank"
+        >Faculty of Computer Science</a
+      >
+      Made By Omar & Sammak & Shafin
+    </div>
+
+  </body>
+</html>

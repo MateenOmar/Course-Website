@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>CSCB63 - Design and Analysis of Data Structures</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Ubuntu"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/courseTeam">Team</a></li>
+        <li><a href="/syllabus">Syllabus</a></li>
+        <li><a href="/lectures">Lectures</a></li>
+        <li><a href="/labs">Labs</a></li>
+        <li><a href="/assignments">Assignments</a></li>
+        <li>
+          <a
+            href="https://piazza.com/class/kk052lckppx73x?cid=217"
+            target="_blank"
+            >Piazza</a
+          >
+        </li>
+        <li>
+          <a href="https://markus.utsc.utoronto.ca/cscb20w21/" target="_blank"
+            >Markus</a
+          >
+        </li>
+
+        {% if name == "students" %}
+        <li><a class="current-tab" href="/feedback">Feedback</a></li>
+        <li><a href="/mygrades"> My Grades</a></li>
+        {% elif name == "instructors" %}
+        <li><a href="/myFeedback">My Feedback</a></li>
+        <li><a href="/gradesall">Grades</a></li>
+        {% endif %}
+
+        <form action="/logout">
+          <button>Logout</button>
+        </form>
+      </ul>
+    </div>
+
+    <div class="body-container">
+      <div class="text-block">
+        <p>
+          This section is for giving <b>Anonymous</b> feedback to course
+          instructors and teaching assistants
+        </p>
+
+        {% with messages = get_flashed_messages() %} {%if messages %} {% for
+        message in messages %}
+        <p>{{message}}</p>
+        {% endfor %} {% endif %} {% endwith %}
+
+        <form action="/feedbackInput" method="POST">
+          <div>
+            <select name="instructor">
+              <option value="">Select Instructor</option>
+              {% for item in instructors %}
+              <option value="{{ item['userName'] }}">{{ item['userName'] }}</option>
+              {% endfor%}
+            </select>
+          </div>
+          <div>
+            <h3>What do you like about the instructor teaching?</h3>
+            <input
+              type="text"
+              name="f1"
+            />
+          </div>
+          <div>
+            <h3>What do you recommend the instructor to do to improve their teaching?</h3>
+            <input
+              type="text"
+              name="f2"
+            />
+          </div>
+          <div>
+            <h3>What do you like about the labs?</h3>
+            <input
+              type="text"
+              name="f3"
+            />
+          </div>
+          <div>
+            <h3>What do you recommend the lab instructors to do to improve their lab teaching?</h3>
+            <input
+              type="text"
+              name="f4"
+            />
+          </div>
+          </br>
+          <button class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="footer">
+      <a
+        href="https://web.cs.toronto.edu/contact-us/faculty-directory"
+        target="_blank"
+        >Faculty of Computer Science</a
+      >
+      Made By Omar & Sammak & Shafin
+    </div>
+  </body>
+</html>

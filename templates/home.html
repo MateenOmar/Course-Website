@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>CSCB63 - Design and Analysis of Data Structures</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Ubuntu"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a class="current-tab" href="/home">Home</a></li>
+        <li><a href="/courseTeam">Team</a></li>
+        <li><a href="/syllabus">Syllabus</a></li>
+        <li><a href="/lectures">Lectures</a></li>
+        <li><a href="/labs">Labs</a></li>
+        <li><a href="/assignments">Assignments</a></li>
+        <li>
+          <a
+            href="https://piazza.com/class/kk052lckppx73x?cid=217"
+            target="_blank"
+            >Piazza</a
+          >
+        </li>
+        <li>
+          <a href="https://markus.utsc.utoronto.ca/cscb20w21/" target="_blank"
+            >Markus</a
+          >
+        </li>
+
+        {% if name == "students" %}
+        <li><a href="/feedback">Feedback</a></li>
+        <li><a href="/mygrades"> My Grades</a></li>
+        {% elif name == "instructors" %}
+        <li><a href="/myFeedback">My Feedback</a></li>
+        <li><a href="/gradesall">Grades</a></li>
+        {% endif %}
+
+        <form action="/logout">
+          <button>Logout</button>
+        </form>
+      </ul>
+    </div>
+
+    <div class="body-container">
+      <div class="text-block">
+        <h1>CSCB63 - Design and Analysis of Data Structures</h1>
+        <p></p>
+
+        <h2>Course Description</h2>
+        <hr />
+
+        <p>
+          Design, analysis, implementation and comparison of efficient data
+          structures for common abstract data types. Priority queues: heaps and
+          mergeable heaps. Dictionaries: balanced binary search trees, B-trees,
+          hashing. Amortization: data structures for managing dynamic tables and
+          disjoint sets. Data structures for representing graphs. Graph
+          searches.
+        </p>
+
+        <h2>Instructor</h2>
+        <hr />
+
+        <p>
+          Dr. Anna Bretscher<br />
+          Email: anna.bretscher@utoronto.ca <br />
+          Office: IC 493
+        </p>
+
+        <h2>Lecture Times</h2>
+        <hr />
+
+        <p>
+          Wednesdays 3-4pm
+          <a href="https://zoom.us/" target="_blank">Zoom Link</a><br />
+          Thursdays 9:10-11:00
+          <a href="https://zoom.us/" target="_blank">Zoom Link</a>
+        </p>
+
+        <h2>Office Hours</h2>
+        <hr />
+
+        <p>
+          Usually Mondays 11:00-12:30, <br />
+          Friday 10:40-11:30.<br />
+          Please see the
+          <a href="{{ url_for('static',filename='content/basic.ics') }}"
+            >calendar</a
+          >
+          for weekly changes.
+        </p>
+      </div>
+    </div>
+
+    <div id="footer">
+      <a
+        href="https://web.cs.toronto.edu/contact-us/faculty-directory"
+        target="_blank"
+        >Faculty of Computer Science</a
+      >
+      Made By Omar & Sammak & Shafin
+    </div>
+  </body>
+</html>

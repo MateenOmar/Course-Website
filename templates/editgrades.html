@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta character="utf-8"/>
+
+        <title>CSCB63 - Design and Analysis of Data Structures</title>
+
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static',filename='style.css') }}"
+         />
+
+         <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Ubuntu"
+        />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    </head>
+
+    <body>
+        <div class="menu">
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/courseTeam">Team</a></li>
+                <li><a href="/syllabus">Syllabus</a></li>
+                <li><a href="/lectures">Lectures</a></li>
+                <li><a href="/labs">Labs</a></li>
+                <li><a href="/assignments">Assignments</a></li>
+                <li>
+                    <a
+                        href="https://piazza.com/class/kk052lckppx73x?cid=217"
+                        target="_blank"
+                    >Piazza</a
+                    >
+                </li>
+
+                <li>
+                    <a href="https://markus.utsc.utoronto.ca/cscb20w21/" target="_blank"
+                      >Markus</a
+                    >
+                </li>
+
+                <form action="/logout">
+                    <button>Logout</button>
+                </form>
+
+                {% if name == "students" %}
+                <li><a href="/feedback">Feedback</a></li>
+                <li><a href="/mygrades"> My Grades</a></li>
+                {% elif name == "instructors" %}
+                <li><a href="/myFeedback">My Feedback</a></li>
+                <li><a class="current-tab" href="/gradesall">Grades</a></li>
+                {% endif %}
+
+            </ul>
+        </div>
+
+        <div class="body-container">
+            <div class="text-block">
+
+                {% with messages = get_flashed_messages() %} {%if messages %} {% for
+                message in messages %}
+                <p>{{message}}</p>
+                {% endfor %} {% endif %} {% endwith %}
+
+                <div class="grid-containerGradesInstructor">
+
+                    <form action="/editA1" method="post">
+                        <div class="grid-header">Remark A1</div>
+                        <label for="username">Student Username: </label><br />
+                        <input type="text" id="username" name="username"><br>
+                        <label for="mark">Mark:</label><br />
+                        <input type="number" step="0.01" id="mark" name="mark"><br>
+                        <button class="btn">Submit</button> 
+                    </form>
+
+                    <form action="/editQ1" method="post">
+                        <div class="grid-header">Remark Q1</div>
+                        <label for="username">Student Username: </label><br />
+                        <input type="text" id="username" name="username"><br>
+                        <label for="mark">Mark:</label><br />
+                        <input type="text" id="mark" name="mark"><br>
+                        <button class="btn">Submit</button> 
+                    </form>
+
+                    <form action="/editA2" method="post">
+                        <div class="grid-header">Remark A2</div>
+                        <label for="username">Student Username: </label><br />
+                        <input type="text" id="username" name="username"><br>
+                        <label for="mark">Mark:</label><br />
+                        <input type="text" id="mark" name="mark"><br>
+                        <button class="btn">Submit</button> 
+                    </form>
+
+                    <form action="/editQ2" method="post">
+                        <div class="grid-header">Remark Q2</div>
+                        <label for="username">Student Username: </label><br />
+                        <input type="text" id="username" name="username"><br>
+                        <label for="mark">Mark:</label><br />
+                        <input type="text" id="mark" name="mark"><br>
+                        <button class="btn">Submit</button> 
+                    </form>
+
+                    <form action="/editMidterm" method="post">
+                        <div class="grid-header">Remark Midterm</div>
+                        <label for="username">Student Username: </label><br />
+                        <input type="text" id="username" name="username"><br>
+                        <label for="mark">Mark:</label><br />
+                        <input type="text" id="mark" name="mark"><br>
+                        <button class="btn">Submit</button> 
+                    </form>
+
+                    <form action="/editFinal" method="post">
+                        <div class="grid-header">Remark Final</div>
+                        <label for="username">Student Username: </label><br />
+                        <input type="text" id="username" name="username"><br>
+                        <label for="mark">Mark:</label><br />
+                        <input type="text" id="mark" name="mark"><br>
+                        <button class="btn">Submit</button> 
+                    </form>
+
+                </div>
+
+            </div>
+    
+            <div id="footer">
+                <a
+                    href="https://web.cs.toronto.edu/contact-us/faculty-directory"
+                    target="_blank"
+                >Faculty of Computer Science</a
+            >
+            Made By Omar & Sammak & Shafin
+        </div>
+    </body>
+</html>

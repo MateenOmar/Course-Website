@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>CSCB63 - Design and Analysis of Data Structures</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Ubuntu"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="menu">
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a class="current-tab" href="/courseTeam">Team</a></li>
+        <li><a href="/syllabus">Syllabus</a></li>
+        <li><a href="/lectures">Lectures</a></li>
+        <li><a href="/labs">Labs</a></li>
+        <li><a href="/assignments">Assignments</a></li>
+        <li>
+          <a
+            href="https://piazza.com/class/kk052lckppx73x?cid=217"
+            target="_blank"
+            >Piazza</a
+          >
+        </li>
+        <li>
+          <a href="https://markus.utsc.utoronto.ca/cscb20w21/" target="_blank"
+            >Markus</a
+          >
+        </li>
+
+        {% if name == "students" %}
+        <li><a href="/feedback">Feedback</a></li>
+        <li><a href="/mygrades"> My Grades</a></li>
+        {% elif name == "instructors" %}
+        <li><a href="/myFeedback">My Feedback</a></li>
+        <li><a href="/gradesall">Grades</a></li>
+        {% endif %}
+
+        <form action="/logout">
+          <button>Logout</button>
+        </form>
+      </ul>
+    </div>
+
+    <div class="body-container">
+      <div class="text-block">
+        <div class="grid-containerTeam">
+          <div class="grid-header">Role</div>
+          <div class="grid-header">Name</div>
+          <div class="grid-header">Email</div>
+
+          <div class="grid-item">Instructor/Course Coordinator</div>
+          <div class="grid-item">Anna Bretscher</div>
+          <div class="grid-item">example@mail.utoronto.ca</div>
+
+          <div class="grid-item">Teaching Assistant</div>
+          <div class="grid-item">Andrew Yue-Keung Leung</div>
+          <div class="grid-item">example@mail.utoronto.ca</div>
+
+          <div class="grid-item">Teaching Assistant</div>
+          <div class="grid-item">Cai Danhua</div>
+          <div class="grid-item">example@mail.utoronto.ca</div>
+
+          <div class="grid-item">Teaching Assistant</div>
+          <div class="grid-item">Zhao Jinman</div>
+          <div class="grid-item">example@mail.utoronto.ca</div>
+
+          <div class="grid-item">Teaching Assistant</div>
+          <div class="grid-item">Yufei Cui</div>
+          <div class="grid-item">example@mail.utoronto.ca</div>
+
+          <div class="grid-item">Teaching Assistant</div>
+          <div class="grid-item">Mustafa Quraish</div>
+          <div class="grid-item">example@mail.utoronto.ca</div>
+
+          <div class="grid-item">Teaching Assistant</div>
+          <div class="grid-item">Aamir Haroon</div>
+          <div class="grid-item">example@mail.utoronto.ca</div>
+
+          <div class="grid-item">Teaching Assistant</div>
+          <div class="grid-item">Jeff Zhao</div>
+          <div class="grid-item">example@mail.utoronto.ca</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <a
+        href="https://web.cs.toronto.edu/contact-us/faculty-directory"
+        target="_blank"
+        >Faculty of Computer Science</a
+      >
+      Made By Omar & Sammak & Shafin
+    </div>
+  </body>
+</html>
